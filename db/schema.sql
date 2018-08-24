@@ -1,0 +1,8 @@
+CREATE DATABASE cupcakesDB;
+USE cupcakesDB;
+
+CREATE TABLE cupcakes (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    isEaten BOOLEAN NOT NULL DEFAULT false
+);
