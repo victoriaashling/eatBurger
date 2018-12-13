@@ -1,0 +1,20 @@
+body {
+    background-color: lavender;
+}
+
+.jumbotron {
+    background-color: lavender;
+}
+
+.cupcake-form {
+    width: 50vw;
+    margin: auto;
+}
+
+.add-new-cupcake {
+    margin-top: 4vh;
+}
+
+.submit-cupcake {
+    margin: auto;
+}

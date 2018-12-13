@@ -15,7 +15,7 @@ app.set("view engine", "handlebars");
 
 
 const routes = require("./controllers/cupcakes_controller.js");
-app.use(express.static("public"));
+app.use(express.static("./public"));
 app.use(routes);
 
 

@@ -1,28 +1,31 @@
 const cupcake = require("../models/cupcake.js");
 const express = require("express");
-const app = express();
+const router = express.Router();
 
-app.get("/", (req, res) => {
+router.get("/", (req, res) => {
     cupcake.selectAll(result => {
         let hbsObj = {
             cupcake: result
         };
+
         res.render("index", hbsObj);
     });
 });
 
-app.post("/", (req, res) => {
-    let value = req.body.value;
-    cupcake.insertOne(value, result => {
+router.post("/", (req, res) => {
+    let cupcakeName = req.body.cupcakeName;
+
+    cupcake.insertOne(cupcakeName, result => {
         res.json({ id: result.insertId });
     });
 });
 
-app.put("/:id", (req, res) => {
+router.put("/:id", (req, res) => {
     let id = req.params.id;
+
     cupcake.updateOne(id, result => {
         res.status(200).end();
     });
 });
 
-module.exports = app;
+module.exports = router;

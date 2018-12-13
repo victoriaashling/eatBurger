@@ -1,1 +1,9 @@
-{{#each cupcake}}
+<ul>
+    {{#each cupcake}}
+        {{#if this.isEaten}}
+            <li id={{id}}>{{name}}</li>
+        {{else}}
+            <li>{{name}} &nbsp; <button id={{id}} class="btn devoured">Devour</button></li>
+        {{/if}}
+    {{/each}}
+</ul>
